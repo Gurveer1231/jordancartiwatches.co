@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Jordan Carti Watches. Co Checkout</title>
+		<link rel="stylesheet" href="checkout.css" />
+        <!--dist-->
+		<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+        <!--gsap-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+        <!--anime-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+        <!--bootstrap cdns-->
+        <link rel="stylsheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--jquery-->
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <!--greensock-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+        <!--cloudfareajax-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
+         <!--fonts-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div class="menu-wrap">
+			<input type="checkbox" class="toggler">
+			<div class="hamburger"><div></div></div>
+			<div class="menu">
+				<div>
+					<div>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="products.html">Shop</a></li>
+							<li><a href="checkout.html">Checkout</a></li>
+							<li><a href="https://support.habitat.ca/site/Donation2?df_id=6981&mfc_pref=T&6981.donation=form1&_ga=2.1528697.999486732.1638395095-1599912995.1638395095">Donations</a></li>
+							<li><a href="policy.html">Policy</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="left column">
+				<div class="header"><h1 class="ml12">Checkout</h1></div>
+				<a href="products.html"><div class="back-btn">⟵ back to shopping</div></a>
+				<div class="price">
+					<span>total</span>
+					<span>$0.00</span>
+				</div>
+			</div>
+			<div class="right column">
+				<div class="nav">
+					<div class="nav-item">shopping</div>
+					➝
+					<div class="nav-item active">checkout</div>
+				</div>
+				<div class="card-img">
+					<img src="images/card.png" alt="" />
+				</div>
+				<div class="form">
+					<div class="form-row">
+						<input type="text" placeholder="card number" />
+					</div>
+					<div class="form-row">
+						<input type="text" placeholder="date" />
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+						<input type="text" placeholder="cvv" />
+					</div>
+				</div>
+				<div class="btn">
+					<button>confirm purchase</button>
+				</div>
+			</div>
+		</div>
+		<script>
+			var textWrapper = document.querySelector(".ml12");
+			textWrapper.innerHTML = textWrapper.textContent.replace(
+				/\S/g,
+				"<span class='letter'>$&</span>"
+			);
+
+			anime.timeline().add({
+				targets: ".ml12 .letter",
+				translateY: [100, 0],
+				translateZ: 0,
+				opacity: [0, 1],
+				easing: "easeOutExpo",
+				duration: 2000,
+				delay: (el, i) => 1200 + 60 * i,
+			});
+
+			TweenMax.from(".back-btn", 3, {
+				y: "40",
+				opacity: 0,
+				ease: Expo.easeInOut,
+				delay: 0.4,
+			});
+
+			TweenMax.from(".right", 3, {
+				y: "40",
+				opacity: 0,
+				ease: Expo.easeInOut,
+				delay: 0.6,
+			});
+
+			TweenMax.from(".card-img", 2, {
+				y: "60",
+				opacity: 0,
+				ease: Expo.easeInOut,
+				delay: 1.2,
+			});
+
+			TweenMax.from(".btn", 2, {
+				y: "60",
+				opacity: 0,
+				ease: Expo.easeInOut,
+				delay: 1.4,
+			});
+
+			TweenMax.staggerFrom(
+				".price > span",
+				1,
+				{
+					y: "40",
+					opacity: 0,
+					ease: Power2.easeOut,
+					delay: 1.6,
+				},
+				0.2
+			);
+
+			TweenMax.staggerFrom(
+				".nav > .nav-item",
+				1,
+				{
+					y: "40",
+					opacity: 0,
+					ease: Power2.easeOut,
+					delay: 1.6,
+				},
+				0.2
+			);
+
+			TweenMax.staggerFrom(
+				".form > div",
+				1,
+				{
+					y: "40",
+					opacity: 0,
+					ease: Power2.easeOut,
+					delay: 2,
+				},
+				0.2
+			);
+		</script>
+	</body>
+</html>
